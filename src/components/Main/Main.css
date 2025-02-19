@@ -96,22 +96,23 @@
 .search-box img {
   width: 40px;
   cursor: pointer;
+  position: absolute;
+  right: 24px;
 }
 
 .search-box textarea {
   flex: 1;
-  background: transparent;
-  /* border: none;
-  outline: none; */
+  background: #fff;
   padding: 8px;
   font-size: 18px;
 
   /* width: 100%; */
-  height: 150px;
+  height: 90px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 12px;
+  position: relative;
   /* background-color: #f8f8f8;
   font-size: 16px;
   resize: none; */

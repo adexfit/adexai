@@ -1,28 +1,70 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./question.css";
+import { AiContext } from "../../context/AiContext";
 
 const Question = () => {
+  const {
+    inputedtext,
+    setInputedText,
+    ourTranslator,
+    welcome,
+    setWelcome,
+    textAreaText,
+    settextAreaText,
+    detectText,
+    detectedlang,
+    setDetectedLang,
+    targetLang,
+    setTargetLang,
+    translated,
+    setTranslated,
+  } = useContext(AiContext);
+
+  useEffect(() => {
+    console.log(targetLang);
+    setTranslated("");
+  }, [targetLang]);
+
+  const handleTranslation = async () => {
+    const translated = await ourTranslator(inputedtext, targetLang);
+    setTranslated(translated);
+  };
+
   return (
     <div className="main-top">
       <div className="question-box">
-        <textarea placeholder="Question text"></textarea>
-        <div className="actions">
-          <p>
-            <span className="grey">300 Characters</span>
-            <span className="grey">language: English</span>
-          </p>
-          <p>
-            <button className="summarize">Summarize</button>
-            <button className="translate">Translate</button>
-            <select name="" id="">
-              <option value="English">English(en)</option>
-              <option value="Portuguese">Portuguese(pt)</option>
-              <option value="Spanish">Spanish(es)</option>
-              <option value="Russian">Russian(ru)</option>
-              <option value="Turkish">Turkish(tr)</option>
-              <option value="French">French(fr)</option>
+        <div className="reflected_question">{inputedtext}</div>
+        <div className="translated_text">{translated}</div>
+        <div className="operations">
+          <div>
+            <span className="grey">{inputedtext?.length} Characters</span>
+            <span className="grey">language: {detectedlang[0]}</span>
+          </div>
+          {/* <div className="question">Summarized text</div> */}
+          <div className="btn-wrapper">
+            <button
+              className="btn-primary"
+              disabled={inputedtext?.length < 150}
+            >
+              Summarize
+            </button>
+            <button className="btn-sec" onClick={handleTranslation}>
+              Translate
+            </button>
+            <select
+              name="target-lang"
+              id="target-lang"
+              onChange={(e) => setTargetLang(e.target.value)}
+              value={targetLang}
+            >
+              <option value="en">English(en)</option>
+              <option value="pt">Portuguese(pt)</option>
+              <option value="es">Spanish(es)</option>
+              <option value="ru">Russian(ru)</option>
+              <option value="tr">Turkish(tr)</option>
+              <option value="fr">French(fr)</option>
             </select>
-          </p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 .main-top {
-  /* position: absolute;
-  bottom: 0; */
   width: 100%;
   max-width: 900px;
   padding: 0px 20px;
   margin: auto;
+  height: 50vh;
+  overflow-y: scroll;
 }
 
 .question-box textarea {
@@ -26,6 +26,37 @@
     resize: none; */
 }
 
+.operations {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.reflected_question {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  max-width: 100%;
+  height: auto;
+  background-color: beige;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.translated_text {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  max-width: 100%;
+  height: auto;
+  background-color: rgb(235 235 235);
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
 .question-box p {
   color: gray;
   font-size: 12px;
@@ -41,3 +72,38 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.btn-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary {
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #c4c4c4;
+}
+
+.btn-sec {
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #c4c4c4;
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #c4c4c4;
+}
+
+.btn-primary:hover,
+.btn-sec:hover,
+select:hover {
+  background: #1e1f69;
+  color: #fff;
+}
+
+/* gap: 10px; */

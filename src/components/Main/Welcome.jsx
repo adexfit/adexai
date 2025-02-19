@@ -37,14 +37,14 @@ const Welcome = () => {
 
           <MdOutlineSummarize className="icom" />
         </div>
-        <div className="card">
+        {/* <div className="card">
           <p>
             Discover the infinite possibilities of the Prompt API in Chrome
             Extensions.{" "}
           </p>
 
           <TbPrompt className="icom" />
-        </div>
+        </div> */}
       </div>
     </div>
   );
