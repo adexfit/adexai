@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import ourTranslator from "../config/aitext";
 import detectText from "../config/detector";
+import ourSummarizer from "../config/summarizer";
 
 const AiContext = createContext();
 
@@ -27,6 +28,7 @@ const ContextProvider = ({ children }) => {
     setTargetLang,
     translated,
     setTranslated,
+    ourSummarizer,
   };
 
   return (

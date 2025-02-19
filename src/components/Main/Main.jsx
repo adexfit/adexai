@@ -21,6 +21,7 @@ const Main = () => {
     setTargetLang,
     translated,
     setTranslated,
+    ourSummarizer,
   } = useContext(AiContext);
 
   const handleTextInput = async () => {

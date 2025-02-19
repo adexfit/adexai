@@ -18,6 +18,7 @@ const Question = () => {
     setTargetLang,
     translated,
     setTranslated,
+    ourSummarizer,
   } = useContext(AiContext);
 
   useEffect(() => {
@@ -29,6 +30,10 @@ const Question = () => {
     const translated = await ourTranslator(inputedtext, targetLang);
     setTranslated(translated);
   };
+
+  // ourSummarizer(
+  //   "Samuel Hayes was born on a clear winter night, the first breath of life mingling with the chill of January. His father, a carpenter, and his mother, a schoolteacher, filled their modest home with books and the scent of freshly cut wood.As a child, Samuel's world was small—bounded by the maple tree in the front yard and the stream that curled through their backyard. His father’s workshop was a kingdom of shavings and sawdust, where Samuel learned the weight of a hammer and the patience of sanding rough wood smooth."
+  // );
 
   return (
     <div className="main-top">
