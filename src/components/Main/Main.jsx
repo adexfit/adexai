@@ -57,9 +57,7 @@ const Main = () => {
             {/* <img src={assets.send_icon} alt="" onClick={handleTextInput} /> */}
             <IoIosSend
               onClick={handleTextInput}
-              style={{ color: "#fff" }}
-              height={32}
-              width={32}
+              style={{ color: "#fff", width: "32px", height: "32px" }}
             />
           </div>
           <p className="center">

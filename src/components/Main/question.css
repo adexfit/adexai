@@ -54,6 +54,7 @@
   margin-bottom: 16px;
   border-radius: 8px;
   min-height: 80px;
+  color: #fff;
 }
 
 .translated_text {
@@ -78,6 +79,7 @@
 
 .question-box span {
   margin-right: 20px;
+  font-size: 12px;
 }
 
 .question-box .actions {

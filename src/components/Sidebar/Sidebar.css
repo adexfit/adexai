@@ -18,19 +18,27 @@
   cursor: pointer;
 }
 
+.top {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 22px;
+  justify-content: center;
+  align-items: center;
+}
+
 .sidebar .new-chat {
   margin-top: 50px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 10px 15px;
-  background-color: #e6eaf1;
+  background-color: #2e3e57;
   border-radius: 50px;
   font-size: 14px;
-  color: grey;
+  color: #fff;
   cursor: pointer;
 }
-
 .new-chat img {
   width: 15px;
 }
