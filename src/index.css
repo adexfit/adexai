@@ -13,9 +13,14 @@ body {
   min-height: 70vh;
   display: flex;
   width: 100%;
+  background-color: #101828;
 }
 
 body,
 html {
   overflow: hidden;
+}
+
+p {
+  color: #fff;
 }

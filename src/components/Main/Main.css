@@ -14,6 +14,14 @@
   color: #585858;
 }
 
+.nav p {
+  color: #ffffff;
+}
+
+/* .card p {
+  color: #fff;
+} */
+
 .main .nav img {
   width: 40px;
   border-radius: 50%;
@@ -50,30 +58,31 @@
 .main .card {
   height: 170px;
   padding: 15px;
-  /* background-color: #f0f4f9; */
+  background-color: #1e2939;
   border-radius: 10px;
   position: relative;
   cursor: pointer;
-  border: 1px solid #e9e9e9;
+  /* border: 1px solid #575757; */
 }
 
 .main .card .icom {
   width: 35px;
   /* padding: 5px; */
   position: absolute;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 20px;
   bottom: 10px;
   right: 10px;
+  color: #c7c7c7;
 }
 
 .main .card p {
-  color: #585858;
+  color: #c7c7c7;
   font-size: 17px;
 }
 
 .main .card:hover {
-  background-color: #dfe4ea;
+  background-color: #203052;
 }
 
 .main-bottom {
@@ -92,6 +101,7 @@
 .language_detector {
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 
 /* .btn-wrapper {
@@ -122,24 +132,25 @@
 
 .search-box textarea {
   flex: 1;
-  background: #fff;
+  background-color: #1e2939;
   padding: 8px;
   font-size: 18px;
-
-  /* width: 100%; */
+  outline: none;
   height: 90px;
   padding: 12px 20px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  /* border: 1px solid #575757; */
   border-radius: 12px;
   position: relative;
+  color: #fff;
+  outline: none;
   /* background-color: #f8f8f8;
   font-size: 16px;
   resize: none; */
 }
 
-.search-box .textarea:focus {
-  border: 1px solid #6e79df;
+.search-box textarea:focus {
+  border: 2px solid #5f8ae9;
 }
 
 .search-box div {

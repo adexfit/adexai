@@ -43,7 +43,7 @@ const Question = () => {
         <div className="operations">
           <div className="language_detector">
             <span className="grey">{inputedtext?.length} Characters</span>
-            <span className="grey">language: {detectedlang[0]}</span>
+            <span className="grey">{detectedlang[0]}</span>
           </div>
           {/* <div className="question">Summarized text</div> */}
           <div className="btn-wrapper">
