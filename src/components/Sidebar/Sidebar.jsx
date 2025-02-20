@@ -42,20 +42,11 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        {/* <img
-          onClick={handleToggle}
-          className="menu"
-          src={assets.menu_icon}
-          alt="M"
-        /> */}
         <IoIosMenu
           onClick={handleToggle}
           style={{ color: "#fff", width: "32px", height: "32px" }}
-          // width={60}
-          // height={60}
         />
         <div className="new-chat">
-          {/* <img src={assets.plus_icon} alt="" /> */}
           <FaPlus
             onClick={handleNew}
             style={{ color: "#fff", width: "24px", height: "24px" }}
@@ -64,11 +55,11 @@ const Sidebar = () => {
         </div>
         {extended ? (
           <div className="recent">
-            <p className="recent-title">Recent</p>
+            {/* <p className="recent-title">Recent</p>
             <div className="recent-entry">
               <img src={assets.message_icon} alt="" />
               <p>What is react ...</p>
-            </div>
+            </div> */}
           </div>
         ) : (
           ""

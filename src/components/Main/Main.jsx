@@ -33,12 +33,13 @@ const Main = () => {
   } = useContext(AiContext);
 
   const handleTextInput = async (e) => {
+    setTranslated("");
     if (textAreaText == "") {
       setError("Please enter a valid input");
       return;
     }
     setWelcome(false);
-    setTranslated("");
+
     setInputedText(textAreaText);
     const ourLanguage = await detectText(textAreaText.trim());
     console.log(ourLanguage);
@@ -69,6 +70,7 @@ const Main = () => {
               onChange={handleTextArea}
               value={textAreaText}
               ref={errorRef}
+              aria-labelledby="intro-text"
             ></textarea>
             {/* <img src={assets.send_icon} alt="" onClick={handleTextInput} /> */}
             <IoIosSend

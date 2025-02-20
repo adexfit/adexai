@@ -11,7 +11,7 @@ const Welcome = () => {
         <p>
           <span>Hello, friend</span>
         </p>
-        <p>How can I help you today?</p>
+        <p id="intro-text">How can I help you today?</p>
       </div>
       <div className="cards">
         <div className="card">

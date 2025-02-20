@@ -40,36 +40,38 @@ const Question = () => {
     <div className="main-top">
       <div className="question-box">
         <div className="reflected_question">{inputedtext}</div>
-        <div className="translated_text">{translated}</div>
-        <div className="operations">
-          <div className="language_detector">
-            <span className="grey">{inputedtext?.length} Characters</span>
-            <span className="grey">{detectedlang[0]}</span>
-          </div>
-          {/* <div className="question">Summarized text</div> */}
-          <div className="btn-wrapper">
-            <button className="btn-sec" disabled={inputedtext?.length < 150}>
-              Summarize
-            </button>
-            <p>Translate to:</p>
+        <div className="translated_text" id="type">
+          {translated}
+        </div>
+      </div>
+      <div className="operations">
+        <div className="language_detector">
+          <span className="grey">{inputedtext?.length} Characters</span>
+          <span className="grey">{detectedlang[0]}</span>
+        </div>
+        {/* <div className="question">Summarized text</div> */}
+        <div className="btn-wrapper">
+          <button className="btn-sec" disabled={inputedtext?.length < 150}>
+            Summarize
+          </button>
+          <p>Translate to:</p>
 
-            <select
-              name="target-lang"
-              id="target-lang"
-              onChange={(e) => setTargetLang(e.target.value)}
-              value={targetLang}
-            >
-              <option value="en">English(en)</option>
-              <option value="fr">French(fr)</option>
-              <option value="pt">Portuguese(pt)</option>
-              <option value="es">Spanish(es)</option>
-              <option value="ru">Russian(ru)</option>
-              <option value="tr">Turkish(tr)</option>
-            </select>
-            <button className="btn-primary" onClick={handleTranslation}>
-              Translate
-            </button>
-          </div>
+          <select
+            name="target-lang"
+            id="target-lang"
+            onChange={(e) => setTargetLang(e.target.value)}
+            value={targetLang}
+          >
+            <option value="en">English(en)</option>
+            <option value="fr">French(fr)</option>
+            <option value="pt">Portuguese(pt)</option>
+            <option value="es">Spanish(es)</option>
+            <option value="ru">Russian(ru)</option>
+            <option value="tr">Turkish(tr)</option>
+          </select>
+          <button className="btn-primary" onClick={handleTranslation}>
+            Translate
+          </button>
         </div>
       </div>
     </div>
