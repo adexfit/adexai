@@ -4,6 +4,7 @@ import { assets } from "../../assets/assets";
 import Welcome from "./Welcome";
 import Question from "./Question";
 import { AiContext } from "../../context/AiContext";
+import { IoIosSend } from "react-icons/io";
 
 const Main = () => {
   const {
@@ -53,7 +54,13 @@ const Main = () => {
               onChange={handleTextArea}
               value={textAreaText}
             ></textarea>
-            <img src={assets.send_icon} alt="" onClick={handleTextInput} />
+            {/* <img src={assets.send_icon} alt="" onClick={handleTextInput} /> */}
+            <IoIosSend
+              onClick={handleTextInput}
+              style={{ color: "#fff" }}
+              height={32}
+              width={32}
+            />
           </div>
           <p className="center">
             AItext may display inaccurate info, so double-check its responses.
