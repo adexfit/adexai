@@ -41,7 +41,7 @@ const Question = () => {
         <div className="reflected_question">{inputedtext}</div>
         <div className="translated_text">{translated}</div>
         <div className="operations">
-          <div>
+          <div className="language_detector">
             <span className="grey">{inputedtext?.length} Characters</span>
             <span className="grey">language: {detectedlang[0]}</span>
           </div>

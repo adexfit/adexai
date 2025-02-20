@@ -118,3 +118,26 @@ select:hover {
 }
 
 /* gap: 10px; */
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  .main-bottom {
+    width: 100%;
+  }
+
+  .main-container {
+    margin: 0 0px;
+    max-width: 100%;
+  }
+
+  .main {
+    width: 100%;
+  }
+  .btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
