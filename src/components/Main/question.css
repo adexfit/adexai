@@ -37,6 +37,10 @@
     resize: none; */
 }
 
+.error {
+  color: rgb(250, 95, 95);
+}
+
 .operations {
   display: flex;
   flex-direction: row;
@@ -69,6 +73,7 @@
   margin-bottom: 16px;
   border-radius: 8px;
   min-height: 80px;
+  color: #fff;
 }
 
 .question-box p {
@@ -91,6 +96,12 @@
 .btn-wrapper {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-wrapper p {
+  color: #fff;
 }
 
 .btn-sec {
@@ -149,5 +160,11 @@ select:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .main .nav {
+    padding: 10px 24px;
+    color: #585858;
+    background: #1e2939;
   }
 }

@@ -17,6 +17,11 @@ const ourTranslator = async (text, target_lang) => {
   try {
     //detect source translator
     const sourceLang = await detectText(text);
+    if (sourceLang[1] == target_lang) {
+      let errorSelect = "You cannot translate to the same language";
+      return errorSelect;
+    }
+
     //create appropriate translator
     const translator = await self.translation.createTranslator({
       sourceLanguage: sourceLang[1],

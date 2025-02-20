@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import "./Main.css";
 import { assets } from "../../assets/assets";
 import Welcome from "./Welcome";
@@ -7,6 +7,13 @@ import { AiContext } from "../../context/AiContext";
 import { IoIosSend } from "react-icons/io";
 
 const Main = () => {
+  const [error, setError] = useState("");
+  const errorRef = useRef(null);
+
+  useEffect(() => {
+    errorRef.current.focus();
+  }, []);
+
   const {
     inputedtext,
     setInputedText,
@@ -25,7 +32,11 @@ const Main = () => {
     ourSummarizer,
   } = useContext(AiContext);
 
-  const handleTextInput = async () => {
+  const handleTextInput = async (e) => {
+    if (textAreaText == "") {
+      setError("Please enter a valid input");
+      return;
+    }
     setWelcome(false);
     setTranslated("");
     setInputedText(textAreaText);
@@ -36,6 +47,7 @@ const Main = () => {
   };
 
   const handleTextArea = (e) => {
+    setError("");
     settextAreaText(e.target.value);
   };
 
@@ -48,11 +60,15 @@ const Main = () => {
       <div className="main-container">
         {welcome ? <Welcome /> : <Question />}
         <div className="main-bottom">
+          <div>
+            <small className="error">{error}</small>
+          </div>
           <div className="search-box">
             <textarea
               placeholder="Enter your text"
               onChange={handleTextArea}
               value={textAreaText}
+              ref={errorRef}
             ></textarea>
             {/* <img src={assets.send_icon} alt="" onClick={handleTextInput} /> */}
             <IoIosSend

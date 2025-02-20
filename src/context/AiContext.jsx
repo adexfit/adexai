@@ -10,7 +10,7 @@ const ContextProvider = ({ children }) => {
   const [welcome, setWelcome] = useState(true);
   const [textAreaText, settextAreaText] = useState("");
   const [detectedlang, setDetectedLang] = useState([]);
-  const [targetLang, setTargetLang] = useState("");
+  const [targetLang, setTargetLang] = useState("en");
   const [translated, setTranslated] = useState("");
 
   const contextValue = {

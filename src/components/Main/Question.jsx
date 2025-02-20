@@ -23,6 +23,7 @@ const Question = () => {
 
   useEffect(() => {
     console.log(targetLang);
+    setTargetLang(targetLang);
     setTranslated("");
   }, [targetLang]);
 
@@ -47,15 +48,11 @@ const Question = () => {
           </div>
           {/* <div className="question">Summarized text</div> */}
           <div className="btn-wrapper">
-            <button
-              className="btn-primary"
-              disabled={inputedtext?.length < 150}
-            >
+            <button className="btn-sec" disabled={inputedtext?.length < 150}>
               Summarize
             </button>
-            <button className="btn-sec" onClick={handleTranslation}>
-              Translate
-            </button>
+            <p>Translate to:</p>
+
             <select
               name="target-lang"
               id="target-lang"
@@ -63,12 +60,15 @@ const Question = () => {
               value={targetLang}
             >
               <option value="en">English(en)</option>
+              <option value="fr">French(fr)</option>
               <option value="pt">Portuguese(pt)</option>
               <option value="es">Spanish(es)</option>
               <option value="ru">Russian(ru)</option>
               <option value="tr">Turkish(tr)</option>
-              <option value="fr">French(fr)</option>
             </select>
+            <button className="btn-primary" onClick={handleTranslation}>
+              Translate
+            </button>
           </div>
         </div>
       </div>
