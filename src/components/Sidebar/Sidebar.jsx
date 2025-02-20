@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import "../Sidebar/Sidebar.css";
-import { assets } from "../../assets/assets";
+// import { assets } from "../../assets/assets";
 import { IoIosMenu } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import { AiContext } from "../../context/AiContext";

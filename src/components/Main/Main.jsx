@@ -33,9 +33,10 @@ const Main = () => {
   } = useContext(AiContext);
 
   const handleTextInput = async (e) => {
+    const INPUT_REGEX = /^[0-9]*$/;
     setTranslated("");
-    if (textAreaText == "") {
-      setError("Please enter a valid input");
+    if (textAreaText == "" || INPUT_REGEX.test(textAreaText) == true) {
+      setError("Please enter a valid input. Only letters are allowed");
       return;
     }
     setWelcome(false);
@@ -73,10 +74,12 @@ const Main = () => {
               aria-labelledby="intro-text"
             ></textarea>
             {/* <img src={assets.send_icon} alt="" onClick={handleTextInput} /> */}
-            <IoIosSend
-              onClick={handleTextInput}
-              style={{ color: "#fff", width: "32px", height: "32px" }}
-            />
+            <p id="send_ico">
+              <IoIosSend
+                onClick={handleTextInput}
+                style={{ color: "#fff", width: "32px", height: "32px" }}
+              />
+            </p>
           </div>
           <p className="center">
             AItext may display inaccurate info, so double-check its responses.
