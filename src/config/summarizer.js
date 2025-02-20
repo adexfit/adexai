@@ -33,6 +33,7 @@ const ourSummarizer = async (text) => {
       return summary;
     }
   } catch (err) {
+    return "Your browser does not support the Summarizer API";
     console.log(err.name, err.message);
     const errorMessage = "An error occurred. Please try again.";
     return errorMessage;

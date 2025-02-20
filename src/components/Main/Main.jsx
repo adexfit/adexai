@@ -36,7 +36,7 @@ const Main = () => {
     const INPUT_REGEX = /^[0-9]*$/;
     setTranslated("");
     if (textAreaText == "" || INPUT_REGEX.test(textAreaText) == true) {
-      setError("Please enter a valid input. Only letters are allowed");
+      setError("Please enter a valid input. Only numbers are not allowed");
       return;
     }
     setWelcome(false);

@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import "./question.css";
 import { AiContext } from "../../context/AiContext";
 import { assets } from "../../assets/assets";
+import ourSummarizer from "../../config/summarizer";
 
 const Question = () => {
   const [loading, setLoading] = useState(false);
@@ -23,16 +24,29 @@ const Question = () => {
     ourSummarizer,
   } = useContext(AiContext);
 
-  useEffect(() => {
-    console.log(targetLang);
-    setTargetLang(targetLang);
-    setTranslated("");
-  }, [targetLang]);
+  useEffect(
+    () => {
+      console.log(targetLang);
+      setTargetLang(targetLang);
+      setTranslated("");
+
+      if (inputedtext.length > 150 && detectedlang[1] !== "en") {
+      }
+    },
+    [targetLang],
+    inputedtext
+  );
 
   const handleTranslation = async () => {
     setLoading(true);
     const translated = await ourTranslator(inputedtext, targetLang);
     setTranslated(translated);
+    setLoading(false);
+  };
+  const handleSummary = async () => {
+    setLoading(true);
+    const summarized = await ourSummarizer(inputedtext);
+    setTranslated(summarized);
     setLoading(false);
   };
 
@@ -72,7 +86,9 @@ const Question = () => {
         <div className="btn-wrapper">
           {inputedtext?.length > 150 && detectedlang[1] == "en" ? (
             <>
-              <button className="btn-sec">Summarize</button>
+              <button className="btn-sec" onClick={handleSummary}>
+                Summarize
+              </button>
             </>
           ) : (
             ""
