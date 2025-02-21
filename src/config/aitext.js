@@ -33,8 +33,6 @@ const ourTranslator = async (text, target_lang) => {
     return finalTranslatedText;
   } catch (err) {
     const errorMessage = "An error occurred. Please try again.";
-    console.error(err.name, err.message);
-    console.log(errorMessage);
     return errorMessage;
   }
 };

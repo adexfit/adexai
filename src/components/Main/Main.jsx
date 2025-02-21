@@ -33,6 +33,14 @@ const Main = () => {
     ourSummarizer,
   } = useContext(AiContext);
 
+  useEffect(() => {
+    if (inputedtext.length > 150 && detectedlang[1] !== "en") {
+      setTranslated(
+        "You can only translate any text that has less then 150 characters and only summarize English text that has more than 150 characters"
+      );
+    }
+  }, [setInputedText]);
+
   const handleTextInput = async (e) => {
     const INPUT_REGEX = /^[0-9]*$/;
     setTranslated("");
@@ -54,6 +62,7 @@ const Main = () => {
       setTranslated(
         "Language detection model is not available on this browser"
       );
+
       // console.log(error);
     }
 

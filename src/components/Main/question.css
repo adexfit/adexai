@@ -168,6 +168,17 @@ select:hover {
 }
 
 /* gap: 10px; */
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .sidebar {

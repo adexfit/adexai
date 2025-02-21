@@ -21,26 +21,17 @@ const Question = () => {
     ourSummarizer,
   } = useContext(AiContext);
 
-  useEffect(
-    () => {
-      console.log(targetLang);
-      setTargetLang(targetLang);
-      setTranslated("");
+  useEffect(() => {
+    // console.log(targetLang);
+    setTargetLang(targetLang);
+    setTranslated("");
 
-      if (inputedtext.length > 150 && detectedlang[1] !== "en") {
-        setTranslated(
-          "You can only translate any text that has less then 150 characters and only summarize English text that has more than 150 characters"
-        );
-      }
-    },
-    [targetLang],
-    inputedtext
-  );
-
-  const scrollDown = () => {
-    let divElement = document.getElementById("scrollDiv");
-    divElement.scrollIntoView({ behavior: "smooth", block: "end" });
-  };
+    if (inputedtext.length > 150 && detectedlang[1] !== "en") {
+      setTranslated(
+        "You can only translate any text that has less then 150 characters and only summarize English text that has more than 150 characters"
+      );
+    }
+  }, [targetLang, inputedtext, setInputedText, detectedlang]);
 
   const handleTranslation = async () => {
     setLoading(true);
@@ -49,7 +40,6 @@ const Question = () => {
     setLoading(false);
   };
   const handleSummary = async () => {
-    scrollDown();
     try {
       setLoading(true);
       const summarized = await ourSummarizer(inputedtext);
@@ -87,7 +77,11 @@ const Question = () => {
             {translated == "" ? (
               ""
             ) : (
-              <div className="translated_text" id="type">
+              <div
+                className="translated_text"
+                id="type"
+                style={{ animation: "myAnim 2s ease 0s 1 normal forwards" }}
+              >
                 {translated}
               </div>
             )}

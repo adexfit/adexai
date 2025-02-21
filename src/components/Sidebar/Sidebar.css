@@ -43,6 +43,10 @@
   width: 15px;
 }
 
+.new-chat:hover {
+  background-color: #4262a8;
+}
+
 .sidebar .recent {
   display: flex;
   flex-direction: column;
