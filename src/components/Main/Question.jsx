@@ -2,21 +2,14 @@ import React, { useState, useContext, useEffect } from "react";
 import "./question.css";
 import { AiContext } from "../../context/AiContext";
 import { assets } from "../../assets/assets";
-import ourSummarizer from "../../config/summarizer";
+// import ourSummarizer from "../../config/summarizer";
 
 const Question = () => {
   const [loading, setLoading] = useState(false);
   const {
     inputedtext,
-    setInputedText,
     ourTranslator,
-    welcome,
-    setWelcome,
-    textAreaText,
-    settextAreaText,
-    detectText,
     detectedlang,
-    setDetectedLang,
     targetLang,
     setTargetLang,
     translated,
@@ -37,6 +30,11 @@ const Question = () => {
     inputedtext
   );
 
+  const scrollDown = () => {
+    let divElement = document.getElementById("scrollDiv");
+    divElement.scrollIntoView({ behavior: "smooth", block: "end" });
+  };
+
   const handleTranslation = async () => {
     setLoading(true);
     const translated = await ourTranslator(inputedtext, targetLang);
@@ -44,19 +42,21 @@ const Question = () => {
     setLoading(false);
   };
   const handleSummary = async () => {
-    setLoading(true);
-    const summarized = await ourSummarizer(inputedtext);
-    setTranslated(summarized);
-    setLoading(false);
+    scrollDown();
+    try {
+      setLoading(true);
+      const summarized = await ourSummarizer(inputedtext);
+      setTranslated(summarized);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setTranslated(error);
+    }
   };
-
-  // ourSummarizer(
-  //   "Samuel Hayes was born on a clear winter night, the first breath of life mingling with the chill of January. His father, a carpenter, and his mother, a schoolteacher, filled their modest home with books and the scent of freshly cut wood.As a child, Samuel's world was small—bounded by the maple tree in the front yard and the stream that curled through their backyard. His father’s workshop was a kingdom of shavings and sawdust, where Samuel learned the weight of a hammer and the patience of sanding rough wood smooth."
-  // );
 
   return (
     <div className="main-top">
-      <div className="question-box">
+      <div className="question-box" id="scrollDiv">
         <div className="reflected_question">{inputedtext}</div>
         {loading ? (
           <>
@@ -94,7 +94,7 @@ const Question = () => {
             ""
           )}
 
-          {inputedtext?.length < 150  ? (
+          {inputedtext?.length < 150 ? (
             <>
               <p>Translate to:</p>
 

@@ -38,8 +38,8 @@ const detectText = async (text) => {
     // console.log(readableSourcelanguage);
     return [readableSourcelanguage, finalLang];
   } catch (error) {
-    return ["The detector API is not properly setup on your browser", error];
     console.log(error.name, error.message);
+    return ["The detector API is not properly setup on your browser", error];
   }
 };
 

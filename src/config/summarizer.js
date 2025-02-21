@@ -9,7 +9,7 @@ const ourSummarizer = async (text) => {
     if (available === "no") {
       // The Summarizer API isn't usable.
       console.log("Your browser does not support the Summarizer API");
-      return;
+      return "Your browser does not support the Summarizer API";
     }
     if (available === "readily") {
       // The Summarizer API can be used immediately .

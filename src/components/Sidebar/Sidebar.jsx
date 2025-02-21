@@ -8,21 +8,11 @@ import { AiContext } from "../../context/AiContext";
 const Sidebar = () => {
   const [extended, setExtended] = useState(false);
   const {
-    inputedtext,
     setInputedText,
-    ourTranslator,
-    welcome,
     setWelcome,
-    textAreaText,
     settextAreaText,
-    detectText,
-    detectedlang,
     setDetectedLang,
-    targetLang,
-    setTargetLang,
-    translated,
     setTranslated,
-    ourSummarizer,
   } = useContext(AiContext);
 
   const handleToggle = () => {

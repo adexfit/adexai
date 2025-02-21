@@ -8,6 +8,7 @@ import { IoIosSend } from "react-icons/io";
 
 const Main = () => {
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const errorRef = useRef(null);
 
   useEffect(() => {
@@ -40,11 +41,22 @@ const Main = () => {
       return;
     }
     setWelcome(false);
-
     setInputedText(textAreaText);
-    const ourLanguage = await detectText(textAreaText.trim());
-    console.log(ourLanguage);
-    setDetectedLang(ourLanguage);
+
+    try {
+      setLoading(true);
+      const ourLanguage = await detectText(textAreaText.trim());
+      console.log(ourLanguage);
+      setDetectedLang(ourLanguage);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setTranslated(
+        "Language detection model is not available on this browser"
+      );
+      // console.log(error);
+    }
+
     settextAreaText("");
   };
 
