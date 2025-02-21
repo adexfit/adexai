@@ -94,7 +94,7 @@ const Question = () => {
             ""
           )}
 
-          {inputedtext?.length < 150 && detectedlang[1] == "en" ? (
+          {inputedtext?.length < 150  ? (
             <>
               <p>Translate to:</p>
 
