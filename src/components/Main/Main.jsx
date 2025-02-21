@@ -93,7 +93,7 @@ const Main = () => {
               />
             </p>
           </div>
-          <p className="center">
+          <p className="center" style={{ color: "#a5a4ff" }}>
             AItext may display inaccurate info, so double-check its responses.
           </p>
         </div>

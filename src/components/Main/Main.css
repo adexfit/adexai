@@ -86,10 +86,6 @@
 }
 
 .main-bottom {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   position: absolute;
   bottom: 0;
   width: 70%;
@@ -104,14 +100,6 @@
   color: #fff;
 }
 
-/* .btn-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  flex-direction: column;
-  overflow-y: hidden;
-} */
 .main-bottom #send_ico {
   cursor: pointer;
 }
@@ -152,7 +140,7 @@
 }
 
 .search-box textarea:focus {
-  border: 2px solid #5f8ae9;
+  border: 2px solid #a5a4ff;
 }
 
 .search-box div {
@@ -180,6 +168,10 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
   .sidebar {
     display: none;
   }
@@ -196,10 +188,6 @@
     width: 100%;
     min-height: 90vh;
   }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
   .main .cards {
     display: none;
   }

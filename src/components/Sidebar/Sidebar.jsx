@@ -34,13 +34,15 @@ const Sidebar = () => {
       <div className="top">
         <IoIosMenu
           onClick={handleToggle}
-          style={{ color: "#fff", width: "32px", height: "32px" }}
+          style={{
+            color: "#fff",
+            width: "32px",
+            height: "32px",
+            cursor: "pointer",
+          }}
         />
-        <div className="new-chat">
-          <FaPlus
-            onClick={handleNew}
-            style={{ color: "#fff", width: "24px", height: "24px" }}
-          />
+        <div className="new-chat" onClick={handleNew}>
+          <FaPlus style={{ color: "#fff", width: "24px", height: "24px" }} />
           {extended ? <p>New Chat</p> : ""}
         </div>
         {extended ? (

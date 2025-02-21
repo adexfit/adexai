@@ -9,15 +9,28 @@
 
 .question-box {
   overflow-y: scroll;
-  height: 40vh;
+  height: 20vh;
 }
+
+.output {
+  margin-top: 1em;
+  height: 20vh;
+  overflow-y: scroll;
+}
+
+.language_detector {
+  gap: 10px;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
-.question-box::-webkit-scrollbar {
+.question-box::-webkit-scrollbar,
+.output::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.question-box {
+.question-box,
+.output {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -78,7 +91,7 @@
   padding: 10px 16px;
   max-width: 100%;
   height: auto;
-  background-color: #1e2939;
+  background-color: #203052; /*#1e2939; */
   margin-bottom: 16px;
   border-radius: 8px;
   min-height: 80px;
@@ -102,6 +115,10 @@
   align-items: center;
 }
 
+.output {
+  margin-top: 1em;
+}
+
 .btn-wrapper {
   display: flex;
   gap: 10px;
@@ -111,6 +128,7 @@
 
 .btn-wrapper p {
   color: #fff;
+  font-size: 12px;
 }
 
 .btn-sec {
@@ -136,9 +154,10 @@ select {
   padding: 8px 12px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #c4c4c4;
-  background: transparent;
+  /* border: 1px solid #c4c4c4; */
+  background: #1e1f69;
   color: #fff;
+  border: none;
 }
 
 .btn-primary:hover,
@@ -150,7 +169,7 @@ select:hover {
 
 /* gap: 10px; */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .sidebar {
     display: none;
   }
@@ -175,6 +194,14 @@ select:hover {
 
   .question-box {
     overflow-y: scroll;
-    height: 30vh;
+    height: 15vh;
+  }
+  .output {
+    margin-top: 1em;
+    height: 15vh;
+    overflow-y: scroll;
+  }
+  .language_detector {
+    gap: 10px;
   }
 }

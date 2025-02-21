@@ -8,7 +8,11 @@ const Question = () => {
   const [loading, setLoading] = useState(false);
   const {
     inputedtext,
+    setInputedText,
+    setWelcome,
+    settextAreaText,
     ourTranslator,
+    setDetectedLang,
     detectedlang,
     targetLang,
     setTargetLang,
@@ -24,6 +28,9 @@ const Question = () => {
       setTranslated("");
 
       if (inputedtext.length > 150 && detectedlang[1] !== "en") {
+        setTranslated(
+          "You can only translate any text that has less then 150 characters and only summarize English text that has more than 150 characters"
+        );
       }
     },
     [targetLang],
@@ -54,10 +61,20 @@ const Question = () => {
     }
   };
 
+  const handleClear = () => {
+    setInputedText("");
+    settextAreaText("");
+    setTranslated("");
+    setDetectedLang([]);
+    setWelcome(true);
+  };
+
   return (
     <div className="main-top">
       <div className="question-box" id="scrollDiv">
         <div className="reflected_question">{inputedtext}</div>
+      </div>
+      <div className="output">
         {loading ? (
           <>
             <div className="center">
@@ -80,7 +97,12 @@ const Question = () => {
       <div className="operations">
         <div className="language_detector">
           <span className="grey">{inputedtext?.length} Characters</span>
-          <span className="grey">{detectedlang[0]}</span>
+          <span className="grey" style={{ color: "#a5a4ff" }}>
+            {detectedlang[0]}
+          </span>
+          <button className="btn-sec" onClick={handleClear}>
+            Clear
+          </button>
         </div>
         {/* <div className="question">Summarized text</div> */}
         <div className="btn-wrapper">
